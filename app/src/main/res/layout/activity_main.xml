@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        tools:context=".presentation.ui.MainActivity">
+
+    <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/linechart"
+            android:layout_margin="@dimen/big_margin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/primary_dark_rounded_background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent=".75"
+            app:layout_constraintHeight_default="percent"/>
+
+    <LinearLayout
+            android:id="@+id/startDateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/medium_margin"
+            android:background="@drawable/white_rounded_background"
+            android:elevation="@dimen/medium_margin"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/endDateView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linechart">
+
+        <TextView
+                style="@style/MediumPrimaryText"
+                android:id="@+id/startDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="22/12/2020"/>
+
+        <TextView
+                style="@style/RegularSecondaryText"
+                android:id="@+id/startDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_date"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/endDateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/medium_margin"
+            android:background="@drawable/white_rounded_background"
+            android:elevation="@dimen/medium_margin"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/startDateView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linechart">
+
+        <TextView
+                style="@style/MediumPrimaryText"
+                android:id="@+id/endDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="22/12/2020"
+                android:textSize="@dimen/medium_text_size"/>
+
+        <TextView
+                style="@style/RegularSecondaryText"
+                android:id="@+id/endDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end_date"/>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
